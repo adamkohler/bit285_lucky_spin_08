@@ -9,5 +9,8 @@ namespace LuckySpin.Models
         public long Id { get; set; }
         [Required]
         public Boolean IsWinning { get; set; }
+        
+        [DataType(DataType.Currency)]
+        public decimal Balance { get; set; }
     }
 }

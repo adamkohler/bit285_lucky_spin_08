@@ -22,14 +22,15 @@
                 <td>@counter</td>
                 <td>@(spin.IsWinning ? "Win" : "Lose")</td>
                 <!-- TODO: Add a cell that displays the Spin Balance-->
+				<td>$@spin.Balance</td>
             </tr>
         }
     </tbody>
 </table>
 <!-- TODO: Add a link to the Start Over action -->
-<a asp-action=""
-   asp-controller=""
-   asp-route-id="">
+<a asp-action="StartOver"
+   asp-controller="Spinner"
+   asp-route-id="@ViewBag.PlayerId">
     <!-- Pass the player id (HINT: use a ViewBag property) -->
     Start Over
 </a>
