@@ -78,17 +78,22 @@ namespace LuckySpin.Controllers
                 currentPlayer.Balance = currentPlayer.Balance - (decimal).50;
                 if (spinVM.IsWinning == true)
                 {
+                    ViewBag.Display = "block";
                     currentPlayer.Balance = currentPlayer.Balance + (decimal)1.00;
+                }
+                else
+                {
+                    ViewBag.Display = "none";
                 }
                 spinVM.Balance = currentPlayer.Balance;
             }
 
 
             //Prepare the ViewBag
-            if (spinVM.IsWinning)
-                ViewBag.Display = "block";
-            else
-                ViewBag.Display = "none";
+            //if (spinVM.IsWinning)
+              //  ViewBag.Display = "block";
+            //else
+              //  ViewBag.Display = "none";
             //Use current player id for the link to LinkList 
             //   (see the <a href> for "Current Balance" in the SpinIt.cshtml file)
             ViewBag.PlayerId = id;
